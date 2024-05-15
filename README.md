@@ -4,55 +4,49 @@
 <h1> Reverse string in effitiend way with minimum time complexity without inbuild fuction </h1>
 
 ```
-public class Main {
-    public static void main(String[] args) {
-        String s = "Hello, World!";
-        String reversed = reverseString(s);
-        System.out.println(reversed);
-    }
+fun main() {
+    val input = "Hello, World!"
+    val reversed = reverseString(input)
+    println("Reversed string: $reversed")
+}
 
-    public static String reverseString(String s) {
-        // Convert the string to a character array since strings in Java are immutable
-        char[] charArray = s.toCharArray();
-        // Get the length of the string
-        int n = charArray.length;
-        // Swap characters from the beginning and end of the string
-        for (int i = 0; i < n / 2; i++) {
-            char temp = charArray[i];
-            charArray[i] = charArray[n - i - 1];
-            charArray[n - i - 1] = temp;
-        }
-        // Convert the character array back to a string and return
-        return new String(charArray);
+fun reverseString(input: String): String {
+    val charArray = input.toCharArray()
+    val length = charArray.size
+    for (i in 0 until length / 2) {
+        val temp = charArray[i]
+        charArray[i] = charArray[length - i - 1]
+        charArray[length - i - 1] = temp
     }
+    return String(charArray)
 }
 ```
 
 <h1> 2nd highest from array </h1>
 
 ```
-public class Main {
-    public static void main(String[] args) {
-        int[] numbers = {5, 10, 2, 8, 15, 3};
-        int secondHighest = findSecondHighest(numbers);
-        System.out.println("Second highest number: " + secondHighest);
-    }
+fun main() {
+    val numbers = arrayOf(5, 10, 2, 8, 15, 3)
+    val secondHighest = findSecondHighest(numbers)
+    println("Second highest number: $secondHighest")
+}
 
-    public static int findSecondHighest(int[] numbers) {
-        int highest = Integer.MIN_VALUE;
-        int secondHighest = Integer.MIN_VALUE;
+fun findSecondHighest(numbers: Array<Int>): Int? {
+    if (numbers.size < 2) return null
 
-        for (int number : numbers) {
-            if (number > highest) {
-                secondHighest = highest;
-                highest = number;
-            } else if (number > secondHighest && number != highest) {
-                secondHighest = number;
-            }
+    var highest = Int.MIN_VALUE
+    var secondHighest = Int.MIN_VALUE
+
+    for (number in numbers) {
+        if (number > highest) {
+            secondHighest = highest
+            highest = number
+        } else if (number > secondHighest && number != highest) {
+            secondHighest = number
         }
-
-        return secondHighest;
     }
+
+    return if (secondHighest == Int.MIN_VALUE) null else secondHighest
 }
 ```
 
@@ -60,24 +54,44 @@ public class Main {
 <h1> find duplicate no.s in array </h1>
 
 ```
-import java.util.HashSet;
-import java.util.Set;
+fun main() {
+    val numbers = arrayOf(1, 2, 3, 4, 5, 2, 6, 7, 8, 3, 9, 1, 10)
 
-public class Main {
-    public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5, 2, 6, 7, 8, 3, 9, 1, 10};
+    val seen = HashSet<Int>()
+    val duplicates = HashSet<Int>()
 
-        Set<Integer> seen = new HashSet<>();
-        Set<Integer> duplicates = new HashSet<>();
+    for (number in numbers) {
+        if (!seen.add(number)) {
+            // If the number is already in the set, it's a duplicate
+            duplicates.add(number)
+        }
+    }
 
-        for (int number : numbers) {
-            if (!seen.add(number)) {
-                // If the number is already in the set, it's a duplicate
-                duplicates.add(number);
+    println("Duplicate numbers in the array: $duplicates")
+}
+```
+
+
+<h1> Sort array without using default methods in kotlin </h1>
+
+```
+fun main() {
+    val numbers = arrayOf(4, 2, 7, 1, 9, 5, 3)
+    bubbleSort(numbers)
+    println("Sorted array: ${numbers.joinToString()}")
+}
+
+fun bubbleSort(arr: Array<Int>) {
+    val n = arr.size
+    for (i in 0 until n - 1) {
+        for (j in 0 until n - i - 1) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                val temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
             }
         }
-
-        System.out.println("Duplicate numbers in the array: " + duplicates);
     }
 }
 ```
