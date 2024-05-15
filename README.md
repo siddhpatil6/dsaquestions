@@ -1,7 +1,7 @@
 # dsaquestions
 
 
-<h1>2) Reverse string in effitiend way with minimum time complexity without inbuild fuction </h1>
+<h1> Reverse string in effitiend way with minimum time complexity without inbuild fuction </h1>
 
 ```
 public class Main {
