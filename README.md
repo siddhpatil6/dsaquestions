@@ -95,3 +95,20 @@ fun bubbleSort(arr: Array<Int>) {
     }
 }
 ```
+<h1> write extenstion fun, which return string without 1st charecte r</h1>
+
+```
+fun String.removeFirstCharacter(): String {
+    return if (this.length > 1) {
+        this.substring(1)
+    } else {
+        ""
+    }
+}
+
+fun main() {
+    val input = "Hello"
+    val result = input.removeFirstCharacter()
+    println("Result: $result")
+}
+```
