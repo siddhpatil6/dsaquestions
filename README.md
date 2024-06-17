@@ -1,7 +1,7 @@
 ![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/1011a245-8068-4336-bb16-1666f47b244f)![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/653124c7-4e71-4b11-a94b-212880482d66)# dsaquestions
 
 
-<h1> Reverse string in effitiend way with minimum time complexity without inbuild fuction </h1>
+<h1> Reverse string in efficeint way with minimum time complexity without inbuild fuction </h1>
 
 ```
 fun main() {
