@@ -49,7 +49,30 @@ fun findSecondHighest(numbers: Array<Int>): Int? {
     return if (secondHighest == Int.MIN_VALUE) null else secondHighest
 }
 ```
+<h1> 3rd highest from array </h1>
 
+```
+fun thirdHighestNumber(numbers:Array<Int>): Int? {
+    var highest = 0
+    var secondHighest = 0
+    var thirdHighest = 0
+    
+    
+    for(i in numbers){
+        if(i>highest){
+            thirdHighest = secondHighest
+            secondHighest = highest
+            highest =  i
+        }else if(i>secondHighest){
+            thirdHighest = secondHighest
+            secondHighest = i
+        }else if(i>thirdHighest){
+            thirdHighest = i
+        }
+    }
+    return thirdHighest
+}
+```
 
 <h1> find duplicate no.s in array </h1>
 
