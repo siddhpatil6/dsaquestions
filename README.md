@@ -25,7 +25,7 @@ Car car2 = Car("BMW", 250);
 
 <h3>🔹 2. Encapsulation (Data Hiding & Control)</h3>  
 <p>The car's engine is hidden; you just use the <b>accelerate()</b> function without knowing its internal workings.</p>  
-
+<p>Encapsulation is about hiding data (fields/variables) and controlling access through methods (getters/setters).</p>
 <pre>
 class Car {
   String _brand; // Private variable (hidden)
@@ -83,7 +83,7 @@ myTruck.honk(); // Output: HONK! HONK!
 
 <h3>🔹 5. Abstraction (Hiding Complexity & Showing Only Essentials)</h3>  
 <p>A driver doesn’t need to know how the engine works, just how to start the car.</p>  
-
+<p>🔹 Abstraction is about hiding implementation details and exposing only relevant functionality. </p>
 <pre>
 abstract class Vehicle {
   void start(); // Abstract method (no implementation)
