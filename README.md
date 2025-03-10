@@ -216,6 +216,59 @@ println(sb)  // Output: "Hello World"
 <p>🚀 <strong>In most cases, StringBuilder is the best choice unless you specifically need thread safety.</strong></p>
 
 
+<h2>Ambiguity in Multiple Inheritance (Simplified)</h2>
+
+<h3>What is Multiple Inheritance?</h3>
+<p>Multiple inheritance means a class inherits from <strong>more than one class</strong>. This allows the child class to use the properties and methods of both parent classes.</p>
+
+<h3>What is the Ambiguity Problem?</h3>
+<p>If two parent classes have a method with the same name, and the child class inherits from both, <strong>which method should be called?</strong> This creates confusion, known as <strong>ambiguity</strong>.</p>
+
+<h3>Example (Imagine a Real-Life Scenario)</h3>
+<ul>
+  <li><strong>Class A:</strong> Has a <code>show()</code> method.</li>
+  <li><strong>Class B:</strong> Also has a <code>show()</code> method.</li>
+  <li><strong>Class C:</strong> Inherits both A and B.</li>
+  <li><strong>Problem:</strong> If C calls <code>show()</code>, should it use A's or B's method?</li>
+</ul>
+
+<h3>Example in Kotlin (Interfaces only, since Kotlin doesn’t support multiple class inheritance)</h3>
+<pre><code>interface A {
+    fun show() {
+        println("Show from A")
+    }
+}
+
+interface B {
+    fun show() {
+        println("Show from B")
+    }
+}
+
+class C : A, B {
+    override fun show() {
+        // Must specify which show() to use, or provide a new implementation
+        super&lt;A&gt;.show()  // Calls show() from A
+    }
+}
+
+fun main() {
+    val obj = C()
+    obj.show()  // Output: Show from A
+}
+</code></pre>
+
+<h3>How to Resolve the Ambiguity?</h3>
+<ul>
+  <li><strong>Specify explicitly</strong> which method to call using <code>super&lt;ClassName&gt;.method()</code>.</li>
+  <li><strong>Override the method</strong> in the child class to provide a new implementation.</li>
+</ul>
+
+<h3>Why Doesn’t Kotlin Support Multiple Class Inheritance?</h3>
+<p>Kotlin does not allow a class to inherit from multiple classes because it would lead to ambiguity. Instead, Kotlin allows multiple inheritance using interfaces, where conflicts must be resolved manually.</p>
+
+<p>👉 <strong>In Kotlin, multiple inheritance of classes is not allowed to prevent this issue! But you can implement multiple interfaces and resolve conflicts manually.</strong> 🚀</p>
+
 
 ![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/1011a245-8068-4336-bb16-1666f47b244f)![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/653124c7-4e71-4b11-a94b-212880482d66)# dsaquestions
 
