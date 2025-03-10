@@ -138,6 +138,84 @@ myElectricCar.start(); // Output: Electric Car is starting silently!
   </tr>
 </table>
 
+<h2>StringBuffer vs. StringBuilder in Kotlin (Simplified Explanation)</h2>
+
+<h3>What is the Problem with String?</h3>
+<p>In Kotlin (and Java), <code>String</code> is <strong>immutable</strong>, meaning once a string is created, it <strong>cannot be changed</strong>. If you modify a <code>String</code>, a new object is created instead of modifying the existing one.</p>
+
+<pre><code>var str = "Hello"
+str += " World"  // Creates a new String instead of modifying the original one
+println(str)  // Output: "Hello World"
+</code></pre>
+
+<p>This makes <code>String</code> inefficient if you need to perform many modifications because every time a change happens, a new object is created in memory.</p>
+
+<h3>What is StringBuffer?</h3>
+<p><code>StringBuffer</code> is a <strong>mutable (modifiable) string</strong> class that allows us to change the content of the string without creating new objects.</p>
+
+<pre><code>val sb = StringBuffer("Hello")
+sb.append(" World")  // Modifies the same object
+println(sb)  // Output: "Hello World"
+</code></pre>
+
+<p><strong>Advantages of StringBuffer:</strong></p>
+<ul>
+  <li><strong>Efficient:</strong> No new object is created; instead, the existing object is modified.</li>
+  <li><strong>Thread-Safe:</strong> <code>StringBuffer</code> is <strong>synchronized</strong>, meaning multiple threads can use it safely without corrupting the data.</li>
+</ul>
+
+<h3>What is StringBuilder?</h3>
+<p><code>StringBuilder</code> is similar to <code>StringBuffer</code> but with one key difference: it is <strong>not thread-safe</strong>. This means that <code>StringBuilder</code> is faster than <code>StringBuffer</code> but should only be used in a single-threaded environment.</p>
+
+<pre><code>val sb = StringBuilder("Hello")
+sb.append(" World")  
+println(sb)  // Output: "Hello World"
+</code></pre>
+
+<p><strong>Advantages of StringBuilder:</strong></p>
+<ul>
+  <li><strong>Faster than StringBuffer:</strong> Because it is not synchronized.</li>
+  <li><strong>More efficient:</strong> Ideal for use in single-threaded applications where thread safety is not a concern.</li>
+</ul>
+
+<h3>Key Differences (Simplified)</h3>
+<table border="1">
+  <tr>
+    <th>Feature</th>
+    <th>String (Immutable)</th>
+    <th>StringBuffer</th>
+    <th>StringBuilder</th>
+  </tr>
+  <tr>
+    <td><strong>Modifiable?</strong></td>
+    <td>❌ No</td>
+    <td>✅ Yes</td>
+    <td>✅ Yes</td>
+  </tr>
+  <tr>
+    <td><strong>Thread-Safe?</strong></td>
+    <td>✅ Yes</td>
+    <td>✅ Yes</td>
+    <td>❌ No</td>
+  </tr>
+  <tr>
+    <td><strong>Performance</strong></td>
+    <td>🚫 Slow (Creates new objects)</td>
+    <td>🟢 Medium (Thread-safe, but slightly slower)</td>
+    <td>🔥 Fast (Best for single-threaded)</td>
+  </tr>
+</table>
+
+<h3>When to Use What?</h3>
+<ul>
+  <li><strong>Use String</strong> → If you do not need to modify the text often.</li>
+  <li><strong>Use StringBuffer</strong> → If you are working in a multi-threaded environment and need thread safety.</li>
+  <li><strong>Use StringBuilder</strong> → If you are working in a single-threaded environment and need better performance.</li>
+</ul>
+
+<p>🚀 <strong>In most cases, StringBuilder is the best choice unless you specifically need thread safety.</strong></p>
+
+
 
 ![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/1011a245-8068-4336-bb16-1666f47b244f)![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/653124c7-4e71-4b11-a94b-212880482d66)# dsaquestions
 
