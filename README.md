@@ -138,9 +138,6 @@ myElectricCar.start(); // Output: Electric Car is starting silently!
   </tr>
 </table>
 
-<h3>🚀 In Short:</h3>  
-<p>OOP in programming is just like how real-world objects work! 🎉</p>
-
 
 ![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/1011a245-8068-4336-bb16-1666f47b244f)![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/653124c7-4e71-4b11-a94b-212880482d66)# dsaquestions
 
