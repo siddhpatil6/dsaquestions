@@ -1,3 +1,147 @@
+
+<h2>🚗 OOP Concept Explained with One Simple Example</h2>  
+
+<p>Imagine a <b>Car</b> as a real-world object. Let's see how Object-Oriented Programming (OOP) applies to it.</p>  
+
+<h3>🔹 1. Class & Object</h3>  
+<p>A <b>Class</b> is like a blueprint for a car.<br>  
+An <b>Object</b> is the actual car built using that blueprint.</p>  
+
+<pre>
+class Car {
+  String brand;
+  int speed;
+
+  Car(this.brand, this.speed); // Constructor
+}
+</pre>
+
+<p>Now, we create <b>objects</b> (real cars):</p>  
+
+<pre>
+Car car1 = Car("Tesla", 200);  
+Car car2 = Car("BMW", 250);
+</pre>
+
+<h3>🔹 2. Encapsulation (Data Hiding & Control)</h3>  
+<p>The car's engine is hidden; you just use the <b>accelerate()</b> function without knowing its internal workings.</p>  
+
+<pre>
+class Car {
+  String _brand; // Private variable (hidden)
+  int speed;
+
+  Car(this._brand, this.speed);
+
+  void accelerate() {
+    speed += 10;
+    print("Speed increased to $speed km/h");
+  }
+}
+</pre>
+
+<h3>🔹 3. Inheritance (Reusability)</h3>  
+<p>A <b>SportsCar</b> is a special type of <b>Car</b> with extra features. It inherits all properties from Car.</p>  
+
+<pre>
+class SportsCar extends Car {
+  SportsCar(String brand, int speed) : super(brand, speed);
+
+  void turboBoost() {
+    speed += 50;
+    print("Turbo Boost! Speed is now $speed km/h");
+  }
+}
+
+SportsCar myCar = SportsCar("Ferrari", 300);
+myCar.turboBoost(); // Output: Turbo Boost! Speed is now 350 km/h
+</pre>
+
+<h3>🔹 4. Polymorphism (Many Forms of a Function)</h3>  
+<p>Different cars <b>honk</b> differently.</p>  
+
+<pre>
+class Car {
+  void honk() {
+    print("Beep! Beep! 🚗");
+  }
+}
+
+class Truck extends Car {
+  @override
+  void honk() {
+    print("HONK! HONK! 🚛");
+  }
+}
+
+Car myCar = Car();
+Truck myTruck = Truck();
+
+myCar.honk(); // Output: Beep! Beep!
+myTruck.honk(); // Output: HONK! HONK!
+</pre>
+
+<h3>🔹 5. Abstraction (Hiding Complexity & Showing Only Essentials)</h3>  
+<p>A driver doesn’t need to know how the engine works, just how to start the car.</p>  
+
+<pre>
+abstract class Vehicle {
+  void start(); // Abstract method (no implementation)
+}
+
+class Car extends Vehicle {
+  @override
+  void start() {
+    print("Car is starting with a key! 🚗");
+  }
+}
+
+class ElectricCar extends Vehicle {
+  @override
+  void start() {
+    print("Electric Car is starting silently! ⚡");
+  }
+}
+
+Car myCar = Car();
+ElectricCar myElectricCar = ElectricCar();
+
+myCar.start(); // Output: Car is starting with a key!
+myElectricCar.start(); // Output: Electric Car is starting silently!
+</pre>
+
+<h3>🎯 Summary</h3>  
+<table border="1">
+  <tr>
+    <th>OOP Concept</th>
+    <th>Real-World Example</th>
+  </tr>
+  <tr>
+    <td><b>Class & Object</b></td>
+    <td>Blueprint vs. Actual Car</td>
+  </tr>
+  <tr>
+    <td><b>Encapsulation</b></td>
+    <td>Engine is hidden; just press "accelerate"</td>
+  </tr>
+  <tr>
+    <td><b>Inheritance</b></td>
+    <td>SportsCar extends Car</td>
+  </tr>
+  <tr>
+    <td><b>Polymorphism</b></td>
+    <td>Different vehicles honk differently</td>
+  </tr>
+  <tr>
+    <td><b>Abstraction</b></td>
+    <td>Driver only knows "start()" function, not the engine details</td>
+  </tr>
+</table>
+
+<h3>🚀 In Short:</h3>  
+<p>OOP in programming is just like how real-world objects work! 🎉</p>
+
+
 ![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/1011a245-8068-4336-bb16-1666f47b244f)![1_6Ay06giAcrgH0TWI5tiv6Q](https://github.com/siddhpatil6/dsaquestions/assets/5618021/653124c7-4e71-4b11-a94b-212880482d66)# dsaquestions
 
 
